@@ -15,7 +15,16 @@
     {!! Form::label('password', 'Password:') !!}
     {!! Form::password('password', ['class' => 'form-control']) !!}
 </div>
-
+<!-- Confirm Password Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('password', 'Confirm Password:') !!}
+    {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
+</div>
+<!-- Role -->
+<div class="form-group col-sm-6">
+    {!! Form::label('Role:') !!}
+    {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
+</div>
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}

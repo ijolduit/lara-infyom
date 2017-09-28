@@ -5,7 +5,7 @@
         <th colspan="3">Action</th>
     </thead>
     <tbody>
-    @foreach($users as $users)
+    @foreach($data as $users)
         <tr>
             <td>{!! $users->name !!}</td>
             <td>{!! $users->email !!}</td>
