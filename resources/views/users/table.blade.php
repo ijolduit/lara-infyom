@@ -2,6 +2,7 @@
     <thead>
         <th>Name</th>
         <th>Email</th>
+        <th>Role</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -9,6 +10,13 @@
         <tr>
             <td>{!! $users->name !!}</td>
             <td>{!! $users->email !!}</td>
+            <td>
+                @if(!empty($users->roles))
+                    @foreach($users->roles as $v)
+                    <label class="label label-success">{{ $v->display_name }}</label>
+                    @endforeach
+                @endif
+            </td>
             <td>
                 {!! Form::open(['route' => ['users.destroy', $users->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
